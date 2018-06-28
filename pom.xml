@@ -15,14 +15,18 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+ 
   <build>
-    <finalName>sample-webapp</finalName>
-  </build>
-  <plugin>            
-  <groupId>org.apache.maven.plugins</groupId>
-  <artifactId>maven-war-plugin</artifactId>
-  <configuration>
-    <webXml>src\main\webapp\WEB-INF\web.xml</webXml>        
-  </configuration>
-</plugin>
+        <finalName>sample-webapp</finalName>
+          <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <webXml>WebContent\WEB-INF\web.xml</webXml>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
 </project>
