@@ -15,6 +15,17 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  
+  <distributionManagement>
+       <repository>
+           <id>releases</id>
+           <url>http://localhost:8080/nexus-2.14.8-01/content/repositories/releases</url>
+       </repository>
+       <snapshotRepository>
+             <id>snapshots</id>
+             <url>http://localhost:8080/nexus-2.14.8-01/content/repositories/snapshots</url>
+       </snapshotRepository>
+   </distributionManagement>
  
   <build>
         <finalName>sample-webapp</finalName>
@@ -22,9 +33,15 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
+                <version>3.2.2</version>
+                 <type>maven-plugin</type>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
+            </plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+	          <artifactId>maven-release-plugin</artifactId>
+	          <version>2.5.3</version>
             </plugin>
         </plugins>
     </build>
